@@ -2,10 +2,10 @@ FROM php:5-fpm
 
 LABEL maintainer="darienmh@gmail.com"
 
-#ADD wkhtmltopdf /usr/bin/wkhtmltopdf
+ADD wkhtmltopdf /usr/bin/wkhtmltopdf
 
 RUN php -m \
-#&& chmod +x /usr/bin/wkhtmltopdf \
+&& chmod +x /usr/bin/wkhtmltopdf \
 && apt-get update \
 && apt-get install -y --force-yes --no-install-recommends \
 	libssl-dev \
@@ -16,10 +16,10 @@ RUN php -m \
 	libxslt-dev \
 	libmcrypt-dev \
 	libicu-dev \
-#	libxrender1 \
-#    libfontconfig1 \
-#	libx11-6 \
-#	libxext6 \
+	libxrender1 \
+    libfontconfig1 \
+	libx11-6 \
+	libxext6 \
 	imagemagick \
 	
 && pecl install xdebug \
