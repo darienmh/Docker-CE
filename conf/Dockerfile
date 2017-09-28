@@ -16,10 +16,11 @@ RUN php -m \
 	libxslt-dev \
 	libmcrypt-dev \
 	libicu-dev \
-	libxrender1 \
-    libfontconfig1 \
-	libx11-6 \
-	libxext6 \
+#	libxrender1 \
+#    libfontconfig1 \
+#	libx11-6 \
+#	libxext6 \
+	imagemagick \
 	
 && pecl install xdebug \
 && docker-php-ext-enable xdebug \
