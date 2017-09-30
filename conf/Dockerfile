@@ -24,8 +24,6 @@ RUN php -m \
 	
 && pecl install xdebug \
 && docker-php-ext-enable xdebug \
-&& pecl install imagick \
-&& docker-php-ext-enable imagick --with-imagick=/opt/local/ \
 
 && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
 
