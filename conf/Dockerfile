@@ -20,10 +20,14 @@ RUN php -m \
     libfontconfig1 \
 	libx11-6 \
 	libxext6 \
+	pkg-config \
 	imagemagick \
+	libmagickwand-dev \
 	
 && pecl install xdebug \
 && docker-php-ext-enable xdebug \
+&& pecl install imagick \
+&& docker-php-ext-enable imagick \
 
 && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
 
